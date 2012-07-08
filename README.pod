@@ -107,12 +107,6 @@ and may be cloned from L<git://https://github.com/iarna/Coro-Localize.git>
 
 =head1 SUPPORT
 
-=head2 Perldoc
-
-You can find documentation for this module with the perldoc command.
-
-  perldoc Coro::Localize
-
 =head2 Websites
 
 The following websites have more information about this module, and may be of help to you. As always,
