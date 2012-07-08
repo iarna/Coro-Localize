@@ -279,7 +279,7 @@ useless.  In the future it may emit a warning or worse.
 Inspiration for this module came from seeing L<Coro::LocalScalar>.  The
 initial shape of the guts of the module came from L<Begin::Declare>.
 
-=head1 SEE ALSO
+=head1 INSPIRATION
 
 L<Coro::LocalScalar> The same sort of idea, but implemented via tied magic
 and/or LVALUE scalars.
