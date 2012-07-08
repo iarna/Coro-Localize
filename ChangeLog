@@ -2,6 +2,8 @@ Revision history for perl module Coro::Localize
 
 {{$NEXT}}
 
+0.1.1     2012-07-08
+
 - Fix dependency list
 
 0.1.0     2012-07-08
