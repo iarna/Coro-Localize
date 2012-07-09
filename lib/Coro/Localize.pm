@@ -4,11 +4,17 @@ use common::sense;
 use Devel::Declare;
 use Data::Alias ();
 
-my $stub = sub {};
 sub import {
-    my $caller = caller;
-    Devel::Declare->setup_for( $caller => { corolocal => {const => \&parser} } );
-    *{$caller.'::corolocal'} = $stub;
+    my $class = shift;
+    $class->import_into( scalar caller );
+}
+
+my $stub = sub {};
+sub import_into {
+    my $class = shift;
+    my( $target ) = @_;
+    Devel::Declare->setup_for( $target => { corolocal => {const => \&parser} } );
+    *{$target.'::corolocal'} = $stub;
 }
 
 our $prefix = '';
@@ -195,8 +201,10 @@ sub strip_assign {
 
     use feature qw( say );
     use Coro;
-    use Coro::Localize;
     use Coro::EV;
+    use Coro::Localize;
+    # Or with Syntax::Feature:
+    # use syntax qw( corolocal );
      
     our $scalar = "main loop";
      
@@ -283,3 +291,7 @@ initial shape of the guts of the module came from L<Begin::Declare>.
 
 L<Coro::LocalScalar> The same sort of idea, but implemented via tied magic
 and/or LVALUE scalars.
+
+=head1 SEE ALSO
+
+Syntax::Feature::Corolocal
