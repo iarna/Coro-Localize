@@ -1,4 +1,4 @@
-use Test::More;
+use Test::More tests => 8;
 use Coro;
 use Coro::Localize;
  
@@ -27,4 +27,3 @@ is( $scalar, "main loop", "scalar main, test 1" );
 $_->join for @threads;
 is( $scalar, "main loop", "scalar main, test 2" );
 
-done_testing;

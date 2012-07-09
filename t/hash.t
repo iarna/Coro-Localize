@@ -1,4 +1,4 @@
-use Test::More;
+use Test::More tests => 8;
 use Coro;
 use Coro::Localize;
  
@@ -26,5 +26,3 @@ push @threads, async {
 is( "@{[ map {qq{$_ => $hash{$_}}} keys %hash ]}", "main => loop", "hash main, test 1" );
 $_->join for @threads;
 is( "@{[ map {qq{$_ => $hash{$_}}} keys %hash ]}", "main => loop", "hash main, test 2" );
-
-done_testing;
