@@ -8,14 +8,16 @@ Coro::Localize - Localize variables to a coroutine
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.2
 
 =head1 SYNOPSIS
 
     use feature qw( say );
     use Coro;
-    use Coro::Localize;
     use Coro::EV;
+    use Coro::Localize;
+    # Or with Syntax::Feature:
+    # use syntax qw( corolocal );
      
     our $scalar = "main loop";
      
@@ -97,6 +99,18 @@ useless.  In the future it may emit a warning or worse.
 
 L<Coro::LocalScalar> The same sort of idea, but implemented via tied magic
 and/or LVALUE scalars.
+
+=head1 SEE ALSO
+
+
+
+=over 4
+
+=item *
+
+L<Syntax::Feature::Corolocal|Syntax::Feature::Corolocal>
+
+=back
 
 =head1 SOURCE
 

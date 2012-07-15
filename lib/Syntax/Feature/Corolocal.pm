@@ -30,6 +30,5 @@ syntax extensions.
 
 =head1 SEE ALSO
 
-Coro::Localize
 Syntax::Feature
 
